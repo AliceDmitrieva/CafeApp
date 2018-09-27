@@ -41,13 +41,9 @@ public class MainActivity extends AppCompatActivity {
         adapter.addPage(new CategoryFragment("Пицца"));
         adapter.addPage(new CategoryFragment("Салаты"));
         adapter.addPage(new CategoryFragment("Паста"));
-        adapter.addPage(new CategoryFragment("Фирменные блюда"));
-        adapter.addPage(new CategoryFragment("Закуски"));
-        adapter.addPage(new CategoryFragment("Мороженое"));
-        adapter.addPage(new CategoryFragment("Кофе"));
         adapter.addPage(new CategoryFragment("Чай"));
+        adapter.addPage(new CategoryFragment("Кофе"));
 
         pager.setAdapter(adapter);
-
     }
 }

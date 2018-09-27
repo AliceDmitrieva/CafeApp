@@ -47,9 +47,35 @@ public class CategoryFragment extends Fragment {
 
     private ArrayList<Product> getProducts() {
         ArrayList<Product>  products = new ArrayList<>();
-        products.add(new Product("Ветчина и грибы", "350 р", R.drawable.pizza_1));
-        products.add(new Product("Цыпленок", "450 р", R.drawable.pizza_2));
-        products.add(new Product("Овощи и грибы", "400 р", R.drawable.pizza_3));
+        if (title.equals("Пицца")) {
+            products.add(new Product("Ветчина и грибы", "350 р", R.drawable.pizza_1));
+            products.add(new Product("Цыпленок", "450 р", R.drawable.pizza_2));
+            products.add(new Product("Овощи и грибы", "400 р", R.drawable.pizza_3));
+        }
+
+        else if (title.equals("Салаты")) {
+            products.add(new Product("Цезарь", "320 р", R.drawable.salad_caesar));
+            products.add(new Product("Капрезе", "200 р", R.drawable.salad_caprese));
+            products.add(new Product("Греческий", "200 р", R.drawable.salad_greek));
+        }
+
+        else if (title.equals("Паста")) {
+            products.add(new Product("Болоньезе", "220 р", R.drawable.pasta_boloneze));
+            products.add(new Product("Карбонара", "220 р", R.drawable.pasta_carbonara));
+            products.add(new Product("Песто", "200 р", R.drawable.pasta_pesto));
+        }
+
+        else if (title.equals("Кофе")) {
+            products.add(new Product("Капучино", "120 р", R.drawable.coffee_cappuccino));
+            products.add(new Product("Эспрессо", "90 р", R.drawable.coffee_espresso));
+            products.add(new Product("Латте", "130 р", R.drawable.cofee_latte));
+        }
+
+        else if (title.equals("Чай")) {
+            products.add(new Product("Имбирный чай", "150 р", R.drawable.tea_ginger));
+            products.add(new Product("Молочный улун", "160 р", R.drawable.tea_milkyoolong));
+            products.add(new Product("Облепиховый чай", "140 р", R.drawable.tea_seabuckthorn));
+        }
 
         return products;
     }
