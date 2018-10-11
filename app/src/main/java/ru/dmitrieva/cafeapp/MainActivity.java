@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-
 public class MainActivity extends AppCompatActivity {
 
     ViewPager viewPager;
@@ -34,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        new GettingProductsAsyncTask().execute();
     }
 
     public void addPages(ViewPager pager) {

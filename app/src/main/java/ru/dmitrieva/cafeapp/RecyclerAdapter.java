@@ -32,7 +32,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Produc
     public void onBindViewHolder(ProductViewHolder holder, int position) {
         holder.title.setText(products.get(position).getTitle());
         holder.price.setText(products.get(position).getPrice());
-        holder.imageView.setImageResource(products.get(position).getImageId());
+   //     holder.imageView.setImageResource(products.get(position).getImageId());
     }
 
     @Override
