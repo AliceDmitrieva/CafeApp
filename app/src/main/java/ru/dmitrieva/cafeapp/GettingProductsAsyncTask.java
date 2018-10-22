@@ -1,6 +1,8 @@
 package ru.dmitrieva.cafeapp;
 
 import android.os.AsyncTask;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -11,24 +13,43 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
-public class GettingProductsAsyncTask extends AsyncTask<Void, Void, List<Product>> {
+public class GettingProductsAsyncTask extends AsyncTask<Void, Void, List<ProductCategory>> {
 
     @Override
-    protected List<Product> doInBackground(Void... arg) {
+    protected List<ProductCategory> doInBackground(Void... arg) {
         String url = "https://my-json-server.typicode.com/AliceDmitrieva/CafeAppServer/db";
         String jsonString = readUrl(url);
         Gson gson = new Gson();
-        Type type = new TypeToken<Map<String, List<Product>>>(){}.getType();
+        Type type = new TypeToken<Map<String, List<Product>>>() {
+        }.getType();
         Map<String, List<Product>> productsMap = gson.fromJson(jsonString, type);
-        System.out.println(productsMap.toString());
-        return null;
+
+        List<ProductCategory> productCategoryList = new ArrayList<>();;
+
+//        for (Map.Entry<String, List<Product>> entry : productsMap.entrySet()) {
+//            String title = entry.getKey();
+//            List<Product> productList = entry.getValue();
+//            productCategoryList.add(new ProductCategory(title, productList));
+//        }
+
+        productCategoryList = productsMap.entrySet().stream()
+                .map(entry -> new ProductCategory(entry.getKey(), entry.getValue()))
+                .collect(Collectors.toList());
+
+        System.out.println(productCategoryList.toString());
+        return productCategoryList;
     }
 
     @Override
-    protected void onPostExecute(List<Product> result) {
+    protected void onPostExecute(List<ProductCategory> result) {
+
     }
 
     private static String readUrl(String urlString) {
