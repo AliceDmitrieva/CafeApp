@@ -5,31 +5,29 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ContentFragmentPagerAdapter extends FragmentPagerAdapter {
 
-    ArrayList<Fragment> pages = new ArrayList<>();
+    List<ProductCategory> categories = new ArrayList<>();
 
-    public ContentFragmentPagerAdapter(FragmentManager fm) {
-        super(fm);
+    public ContentFragmentPagerAdapter(FragmentManager fragmentManager, List<ProductCategory> categories) {
+        super(fragmentManager);
+        this.categories = categories;
     }
 
     @Override
     public Fragment getItem(int position) {
-        return pages.get(position);
+        return CategoryFragment.newInstance(categories.get(position));
     }
 
     @Override
     public int getCount() {
-        return pages.size();
+        return categories.size();
     }
 
-    public void addPage(Fragment fragment) {
-        pages.add(fragment);
-    }
-
-    @Override
+/*    @Override
     public CharSequence getPageTitle(int position) {
         return pages.get(position).toString();
-    }
+    }*/
 }

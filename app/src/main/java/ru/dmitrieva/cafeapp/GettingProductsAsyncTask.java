@@ -1,8 +1,6 @@
 package ru.dmitrieva.cafeapp;
 
 import android.os.AsyncTask;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -16,11 +14,19 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class GettingProductsAsyncTask extends AsyncTask<Void, Void, List<ProductCategory>> {
+
+    GettingProductsListener listener;
+
+    public interface GettingProductsListener {
+        void getProducts(List <ProductCategory> result);
+    }
+
+    public GettingProductsAsyncTask(GettingProductsListener listener) {
+        this.listener = listener;
+    }
 
     @Override
     protected List<ProductCategory> doInBackground(Void... arg) {
@@ -49,7 +55,7 @@ public class GettingProductsAsyncTask extends AsyncTask<Void, Void, List<Product
 
     @Override
     protected void onPostExecute(List<ProductCategory> result) {
-
+        listener.getProducts(result);
     }
 
     private static String readUrl(String urlString) {

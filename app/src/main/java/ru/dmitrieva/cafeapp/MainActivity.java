@@ -9,7 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity implements GettingProductsAsyncTask.GettingProductsListener {
 
     ViewPager viewPager;
 
@@ -21,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         viewPager = findViewById(R.id.container);
-        this.addPages(viewPager);
 
         TabLayout tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
@@ -34,17 +35,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        new GettingProductsAsyncTask().execute();
+        new GettingProductsAsyncTask(MainActivity.this).execute();
     }
 
-    public void addPages(ViewPager pager) {
-        ContentFragmentPagerAdapter adapter = new ContentFragmentPagerAdapter(getSupportFragmentManager());
-        adapter.addPage(new CategoryFragment("Пицца"));
-        adapter.addPage(new CategoryFragment("Салаты"));
-        adapter.addPage(new CategoryFragment("Паста"));
-        adapter.addPage(new CategoryFragment("Чай"));
-        adapter.addPage(new CategoryFragment("Кофе"));
-
-        pager.setAdapter(adapter);
+    @Override
+    public void getProducts(List<ProductCategory> result) {
+        ContentFragmentPagerAdapter adapter = new ContentFragmentPagerAdapter(getSupportFragmentManager(), result);
+        viewPager.setAdapter(adapter);
     }
 }

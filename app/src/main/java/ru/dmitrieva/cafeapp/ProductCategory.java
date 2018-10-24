@@ -11,4 +11,12 @@ public class ProductCategory {
         this.title = title;
         this.productList = productList;
     }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public List<Product> getProductList() {
+        return productList;
+    }
 }

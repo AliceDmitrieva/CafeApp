@@ -1,6 +1,7 @@
 package ru.dmitrieva.cafeapp;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,15 +11,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ProductViewHolder> {
 
-    Context context;
-    ArrayList<Product> products;
+    private Context context;
+    private String categoryTitle;
+    private List<Product> productList = new ArrayList<>();
 
-    public RecyclerAdapter(Context context, ArrayList<Product> products) {
+
+    public RecyclerAdapter(Context context, String categoryTitle, ArrayList<Product> productList) {
         this.context = context;
-        this.products = products;
+        this.categoryTitle = categoryTitle;
+        this.productList = productList;
     }
 
     @Override
@@ -30,14 +35,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Produc
 
     @Override
     public void onBindViewHolder(ProductViewHolder holder, int position) {
-        holder.title.setText(products.get(position).getTitle());
-        holder.price.setText(products.get(position).getPrice());
-   //     holder.imageView.setImageResource(products.get(position).getImageId());
+        holder.title.setText(productList.get(position).getTitle());
+        holder.price.setText(productList.get(position).getPrice());
+    //  holder.imageView.setImageResource(products.get(position).getImageId());
     }
 
     @Override
     public int getItemCount() {
-        return products.size();
+        return productList.size();
     }
 
     public class ProductViewHolder extends RecyclerView.ViewHolder {
