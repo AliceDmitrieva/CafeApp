@@ -26,8 +26,8 @@ public class ContentFragmentPagerAdapter extends FragmentPagerAdapter {
         return categories.size();
     }
 
-/*    @Override
+    @Override
     public CharSequence getPageTitle(int position) {
-        return pages.get(position).toString();
-    }*/
+        return categories.get(position).getTitle();
+    }
 }
