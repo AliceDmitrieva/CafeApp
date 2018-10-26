@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +39,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Produc
     public void onBindViewHolder(ProductViewHolder holder, int position) {
         holder.title.setText(productList.get(position).getTitle());
         holder.price.setText(productList.get(position).getPrice());
-    //  holder.imageView.setImageResource(products.get(position).getImageId());
+        Picasso.get().load(productList.get(position).getImageURL()).into(holder.imageView);
     }
 
     @Override
