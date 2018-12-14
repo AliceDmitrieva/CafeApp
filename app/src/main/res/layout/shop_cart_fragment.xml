@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/shop_cart_margin"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/shop_cart_message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/shop_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/shop_cart_icon" />
+
+        <TextView
+            android:id="@+id/shop_cart_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/shop_cart"
+            android:layout_centerInParent="true"
+            android:text="@string/shop_cart_empty_text"
+            android:textSize="@dimen/shop_cart_text_size" />
+    </RelativeLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/shop_cart_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/shop_cart_container_height"
+        android:layout_weight="6"
+        app:layoutManager="LinearLayoutManager">
+    </android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+        android:id="@+id/final_cost_panel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/shop_cart_panel_height"
+        android:layout_weight="1"
+        android:background="@color/colorPanel"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/final_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/shop_cart_cost_text"
+            android:textSize="@dimen/shop_cart_cost_text_size">
+        </TextView>
+
+        <Button
+            android:id="@+id/button_final_order"
+            android:layout_width="@dimen/shop_cart_button_width"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="@string/order_text"
+            android:textColor="@android:color/background_light" />
+
+    </LinearLayout>
+</LinearLayout>

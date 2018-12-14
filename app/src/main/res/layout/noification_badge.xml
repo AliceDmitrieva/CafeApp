@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/notification_badge_text"
+        android:layout_width="@dimen/notification_badge_width"
+        android:layout_height="@dimen/notification_badge_height"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginLeft="@dimen/notification_badge_margin"
+        android:layout_marginStart="@dimen/notification_badge_margin"
+        android:background="@drawable/circle_notification_badge"
+        android:gravity="center"
+        android:padding="@dimen/notification_badge_padding"
+        android:textColor="@color/colorBadgeText"
+        android:textSize="@dimen/notification_badge_text_size" />
+
+</FrameLayout>

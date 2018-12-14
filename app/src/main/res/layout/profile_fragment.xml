@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/profile_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/profile_image_margin_top"
+        android:src="@drawable/profile_icon"
+        android:tint="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_icon"
+        android:layout_marginStart="@dimen/profile_text_margin_start"
+        android:layout_marginTop="@dimen/profile_text_margin_top"
+        android:text="@string/profile_name_text"
+        android:textSize="@dimen/profile_text_size" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_icon"
+        android:layout_marginStart="@dimen/profile_text_margin_start"
+        android:layout_marginTop="@dimen/profile_edit_text_margin_top"
+        android:layout_toRightOf="@+id/profile_name"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/profile_phone_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_name"
+        android:layout_marginStart="@dimen/profile_text_margin_start"
+        android:layout_marginTop="@dimen/profile_text_margin_top"
+        android:text="@string/profile_phone_text"
+        android:textSize="@dimen/profile_text_size" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_name"
+        android:layout_marginStart="@dimen/profile_text_margin_start"
+        android:layout_marginTop="@dimen/profile_edit_text_margin_top"
+        android:layout_toRightOf="@+id/profile_phone_number"
+        android:inputType="phone" />
+
+    <TextView
+        android:id="@+id/profile_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_phone_number"
+        android:layout_marginStart="@dimen/profile_text_margin_start"
+        android:layout_marginTop="@dimen/profile_text_margin_top"
+        android:text="@string/profile_email_text"
+        android:textSize="@dimen/profile_text_size" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_phone_number"
+        android:layout_marginStart="@dimen/profile_text_margin_start"
+        android:layout_marginTop="@dimen/profile_edit_text_margin_top"
+        android:layout_toRightOf="@+id/profile_email"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:id="@+id/profile_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_email"
+        android:layout_marginStart="@dimen/profile_text_margin_start"
+        android:layout_marginTop="@dimen/profile_text_margin_top"
+        android:text="@string/profile_address_text"
+        android:textSize="@dimen/profile_text_size" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_email"
+        android:layout_marginStart="@dimen/profile_text_margin_start"
+        android:layout_marginTop="@dimen/profile_edit_text_margin_top"
+        android:layout_toRightOf="@+id/profile_address"
+        android:inputType="text" />
+
+</RelativeLayout>

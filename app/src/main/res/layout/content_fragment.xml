@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="@dimen/content_margin"
     android:background="@color/colorBackground"
-    android:padding="15dp"
-    android:layout_margin="20dp">
+    android:padding="@dimen/content_padding">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/contentFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        class="android.support.v7.widget.RecyclerView"
-        tools:listitem="@layout/product_model"/>
+        tools:listitem="@layout/content_product_model" />
+
 </LinearLayout>

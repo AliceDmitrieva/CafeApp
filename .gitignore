@@ -28,3 +28,9 @@ hs_err_pid*
 *.rawproto
 *.properties
 *.pro
+.idea/workspace.xml
+.idea/workspace.xml___jb_tmp___
+.idea/libraries/com_squareup_picasso_picasso_2_71828.xml
+.idea/libraries/com_android_support_exifinterface_27_1_0.xml
+.idea/libraries/com_squareup_okhttp3_okhttp_3_10_0_jar.xml
+.idea/libraries/com_squareup_okio_okio_1_14_0_jar.xml
