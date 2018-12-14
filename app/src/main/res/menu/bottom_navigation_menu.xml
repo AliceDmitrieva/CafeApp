@@ -4,23 +4,20 @@
 
     <item
         android:id="@+id/item_menu"
-        android:enabled="false"
-        android:icon="@drawable/ic_menu"
-        android:title="MENU"
+        android:icon="@drawable/menu_bottom_navigation_icon"
+        android:title="@string/menu_text"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/item_profile"
-        android:enabled="false"
-        android:icon="@drawable/ic_profile"
-        android:title="PROFILE"
+        android:icon="@drawable/profile_bottom_navigation_icon"
+        android:title="@string/profile_text"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/item_basket"
-        android:enabled="false"
-        android:icon="@drawable/ic_basket"
-        android:title="BASKET"
+        android:icon="@drawable/shop_cart_bottom_navigation_icon"
+        android:title="@string/basket_text"
         app:showAsAction="ifRoom" />
 
 </menu>

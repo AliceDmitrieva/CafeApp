@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#ff5f00</color>
-    <color name="colorPrimaryDark">#FF4D44</color>
-    <color name="colorAccent">#ca0707</color>
-    <color name="colorBackground">#f9ba4e</color>
+    <color name="colorPrimary">#ff7131</color>
+    <color name="colorPrimaryDark">#d2361f</color>
+    <color name="colorAccent">#A63400</color>
+    <color name="colorBackground">#ffd096</color>
+    <color name="colorPanel">#e7dfd0</color>
+    <color name="colorTab">#5c3d01</color>
+    <color name="colorTabSelected">#f2ff00</color>
+    <color name="colorPopUp">#f0f1e4</color>
+    <color name="colorBadgeText">#ffffff</color>
+    <color name="colorPopUpText">#000000</color>
 </resources>
